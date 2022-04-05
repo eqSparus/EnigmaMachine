@@ -1,9 +1,19 @@
 package app.enigma.rotor;
 
+import java.util.List;
+
 public class RotorPlusThree extends Rotor {
 
     public RotorPlusThree() {
         super(0);
+    }
+
+    public RotorPlusThree(List<Integer> integers) {
+        super(integers, 0);
+    }
+
+    public RotorPlusThree(List<Integer> integers, int startPost){
+        super(integers, startPost);
     }
 
     public RotorPlusThree(int startPost) {

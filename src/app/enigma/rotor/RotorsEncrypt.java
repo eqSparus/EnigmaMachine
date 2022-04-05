@@ -5,11 +5,11 @@ import app.enigma.encrypt.Cipher;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Rotors {
+public class RotorsEncrypt {
 
     private final List<Rotor> rotors;
 
-    public Rotors(List<Rotor> rotors) {
+    public RotorsEncrypt(List<Rotor> rotors) {
         this.rotors = new ArrayList<>(rotors);
     }
 
@@ -39,10 +39,11 @@ public class Rotors {
 
                 });
 
+        startingPosition();
         return result.toString();
     }
 
-    public void startingPosition() {
+    private void startingPosition() {
         rotors.forEach(rotor -> rotor.setIndex(rotor.getStartPost()));
     }
 

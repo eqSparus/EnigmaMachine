@@ -23,6 +23,14 @@ public abstract class Rotor {
         Collections.shuffle(integers);
     }
 
+    Rotor(List<Integer> integers, int startPost) {
+        this.isOverflow = false;
+        this.startPost = startPost;
+        this.index = startPost;
+        this.integers = new ArrayList<>();
+        this.integers.addAll(integers);
+    }
+
     public abstract void shift();
 
     public int getNumber() {
@@ -54,4 +62,7 @@ public abstract class Rotor {
         isOverflow = overflow;
     }
 
+    public List<Integer> getIntegers() {
+        return new ArrayList<>(this.integers);
+    }
 }
