@@ -27,6 +27,8 @@ Applications for encrypting messages using enigma encryption.
 
 ## About the project
 
+Developed for the 4th laboratory in the discipline "Protection of information in computer systems".
+
 To implement the encryption method, a military version of the Enigma with a switch was chosen.
 Encryption occurs by replacing one character with another from the presented alphabet.
 To do this, rotors with numbers from 1 to 26 randomly mixed are used.
