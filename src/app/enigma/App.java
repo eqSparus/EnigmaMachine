@@ -3,8 +3,7 @@ package app.enigma;
 
 import app.enigma.encrypt.EnigmaDecoder;
 import app.enigma.encrypt.EnigmaEncoder;
-import app.enigma.rotor.RotorPlusOne;
-import app.enigma.rotor.RotorPlusThree;
+import app.enigma.rotor.OffsetRotor;
 import app.enigma.rotor.RotorsEncrypt;
 import app.enigma.swap.Switchboard;
 
@@ -25,16 +24,15 @@ public class App {
             6, 7, 20, 17, 16, 11, 5, 10, 14, 19, 18, 21, 3, 23, 22, 26, 2, 25, 8, 1, 24, 12, 15, 9, 4, 13
     );
 
-
     public static void main(String[] args) {
 
         var switchboard = new Switchboard();
 
         var rotors = new RotorsEncrypt(List.of(
-                new RotorPlusOne(rotorOne, 2),
-                new RotorPlusThree(rotorTwo, 6),
-                new RotorPlusOne(rotorThree, 3))
-        );
+                new OffsetRotor(rotorOne, 9, 1),
+                new OffsetRotor(rotorTwo, 10, 3),
+                new OffsetRotor(rotorThree, 7, 1)
+        ));
 
         try (var sc = new Scanner(System.in)) {
 
