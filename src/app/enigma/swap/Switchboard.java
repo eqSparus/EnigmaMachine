@@ -40,9 +40,10 @@ public class Switchboard implements ISwapLetter {
                     } else {
                         var ch = maps.entrySet().stream()
                                 .filter(entry -> entry.getValue().equals(character))
-                                .findAny().orElseThrow(IllegalArgumentException::new).getKey();
+                                .findAny();
 
-                        result.append(ch);
+                        ch.ifPresentOrElse(c -> result.append(c.getKey()),
+                                () -> result.append(character));
                     }
 
                 });

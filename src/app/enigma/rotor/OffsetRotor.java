@@ -29,7 +29,7 @@ public class OffsetRotor extends Rotor {
 
     public void shift() {
         setIndex(getIndex() + ring);
-        if (getIndex() == NUMBER_ROTOR) {
+        if (getIndex() >= NUMBER_ROTOR) {
             setOverflow(true);
             setIndex(0);
         }
